@@ -29,7 +29,6 @@
 # of all in-scope data structures after each executed instruction.
 
 
-import imp
 import sys
 import bdb # the KEY import here!
 import re
@@ -1353,7 +1352,7 @@ class PGLogger(bdb.Bdb):
         # which emulates "from <module> import *"
         for mn in self.custom_modules:
             # http://code.activestate.com/recipes/82234-importing-a-dynamically-generated-module/
-            new_m = imp.new_module(mn)
+            new_m = types.ModuleType(mn)
             exec(self.custom_modules[mn], new_m.__dict__) # exec in custom globals
             user_globals.update(new_m.__dict__)
 
