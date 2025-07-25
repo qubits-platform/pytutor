@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name='pytutor',
   packages=['pytutor'], # this must be the same as the name above
-  version='1.0.1',
+  version='1.0.0',
   description='An interface to run Phillip Guo\'s Python Tutor',
   author='Sumukh Sridhara',
   author_email='sumukh@berkeley.edu',
